@@ -6,16 +6,16 @@ namespace SampleCalculator
     {
         static void Main(string[] args)
         {
-			OperationType operationType = GetOperationFromUser();
-			
-			int number1 = GetNumberFromUser("Podaj pierwsza liczbe: ");
+            OperationType operationType = GetOperationFromUser();
+
+            int number1 = GetNumberFromUser("Podaj pierwsza liczbe: ");
             int number2 = GetNumberFromUser("Podaj druga liczbe: ");
-			
+
             double result = CalculateResult(number1, number2, operationType);
 
             Console.WriteLine($"Wynik {operationType} =  {result}");
         }
-		
+
         static int GetNumberFromUser(string message)
         {
             Console.WriteLine(message);
@@ -30,9 +30,9 @@ namespace SampleCalculator
                 Console.WriteLine("Wprowadzona wartość nie jest liczbą");
                 return GetNumberFromUser(message);
             }
-		}
-		
         }
+
+
 
         static OperationType GetOperationFromUser()
         {
@@ -59,16 +59,16 @@ namespace SampleCalculator
                     return number1 + number2;
                 case OperationType.Odejmowanie:
                     return number1 - number2;
-                    
+
                 case OperationType.Mnozenie:
                     return number1 * number2;
-                    
+
                 case OperationType.Dzielenie:
                     return number1 / number2;
-                    
+
                 default:
                     return 0;
-                    
+
             }
         }
     }
