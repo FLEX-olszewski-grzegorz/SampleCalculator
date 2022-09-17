@@ -32,7 +32,7 @@ namespace SampleCalculator
 
             double result = CalculateResult(number1, number2, operationType);
 
-            Console.WriteLine($"Wynik mnożenia {number1} * {number2} = {result}");
+            Console.WriteLine($"Wynik {operationType} =  {result}");
         }
 
         static OperationType GetOperationFromUser()
@@ -52,7 +52,7 @@ namespace SampleCalculator
             Dzielenie,
         }
 
-        static double CalculateResult(int number1, int number2, OperationType operationType)
+        static double CalculateResult(double number1, double number2, OperationType operationType)
         {
             switch (operationType)
             {
