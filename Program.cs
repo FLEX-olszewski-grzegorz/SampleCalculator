@@ -1,11 +1,12 @@
-﻿namespace SampleCalculator
+﻿using System.Reflection.Emit;
+
+namespace SampleCalculator
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-
-            GetOperationFromUser();
+            OperationType operationType = GetOperationFromUser();
 
 
             Console.WriteLine("Podaj pierwszą liczbę:");
@@ -33,9 +34,21 @@
             Console.WriteLine($"Wynik mnożenia {number1} * {number2} = {result}");
         }
 
-        static void GetOperationFromUser()
+        static OperationType GetOperationFromUser()
         {
+            Console.WriteLine("Witaj w kalkulatorze, wybierz oparację kalulatora");
+            Console.WriteLine(" 1-Dodawanie \n 2-Odejmowanie \n 3-Mnozenie \n 4-Dzielenie");
+            int indeks = Convert.ToInt32(Console.ReadLine());
+            OperationType wybranaMetoda = (OperationType)indeks;
+            return wybranaMetoda;
+        }
 
+        public enum OperationType
+        {
+            Dodawanie = 1,
+            Odejmowanie,
+            Mnozenie,
+            Dzielenie,
         }
     }
 }
