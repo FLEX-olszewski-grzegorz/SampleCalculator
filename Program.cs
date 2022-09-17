@@ -6,33 +6,32 @@ namespace SampleCalculator
     {
         static void Main(string[] args)
         {
-            OperationType operationType = GetOperationFromUser();
-
-
-
-            Console.WriteLine("Podaj pierwszą liczbę:");
-            string? firstNumber = Console.ReadLine();
-
-            int number1 = 0;
-            if (int.TryParse(firstNumber, out number1) == false)
-            {
-                Console.WriteLine("Pierwsza wprowadzona wartość nie jest liczbą");
-                return;
-            }
-
-            Console.WriteLine("Podaj drugą liczbę:");
-            string? secondNumber = Console.ReadLine();
-
-            int number2 = 0;
-            if (int.TryParse(secondNumber, out number2) == false)
-            {
-                Console.WriteLine("Druga wprowadzona wartość nie jest liczbą");
-                return;
-            }
-
+			OperationType operationType = GetOperationFromUser();
+			
+			int number1 = GetNumberFromUser("Podaj pierwsza liczbe: ");
+            int number2 = GetNumberFromUser("Podaj druga liczbe: ");
+			
             double result = CalculateResult(number1, number2, operationType);
 
             Console.WriteLine($"Wynik {operationType} =  {result}");
+        }
+		
+        static int GetNumberFromUser(string message)
+        {
+            Console.WriteLine(message);
+            string? inputValue = Console.ReadLine();
+            int number = 0;
+            if (int.TryParse(inputValue, out number))
+            {
+                return number;
+            }
+            else
+            {
+                Console.WriteLine("Wprowadzona wartość nie jest liczbą");
+                return GetNumberFromUser(message);
+            }
+		}
+		
         }
 
         static OperationType GetOperationFromUser()
