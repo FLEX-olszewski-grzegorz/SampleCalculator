@@ -4,29 +4,24 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Podaj pierwszą liczbę:");
-            string? firstNumber = Console.ReadLine();
+            int number1 = GetNumberFromUser("Podaj pierwsza liczbe: ");
+            int number2 = GetNumberFromUser("Podaj druga liczbe: ");
+        }
+        static int GetNumberFromUser(string message)
+        {
+            Console.WriteLine(message);
+            string? inputValue = Console.ReadLine();
 
-            int number1 = 0;
-            if (int.TryParse(firstNumber, out number1) == false)
+            int number = 0;
+            if (int.TryParse(inputValue, out number))
             {
-                Console.WriteLine("Pierwsza wprowadzona wartość nie jest liczbą");
-                return;
+                return number;
             }
-
-            Console.WriteLine("Podaj drugą liczbę:");
-            string? secondNumber = Console.ReadLine();
-
-            int number2 = 0;
-            if (int.TryParse(secondNumber, out number2) == false)
+            else
             {
-                Console.WriteLine("Druga wprowadzona wartość nie jest liczbą");
-                return;
+                Console.WriteLine("Wprowadzona wartość nie jest liczbą");
+                return GetNumberFromUser(message);
             }
-
-            int result = number1 * number2;
-
-            Console.WriteLine($"Wynik mnożenia {number1} * {number2} = {result}");
         }
     }
 }
