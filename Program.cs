@@ -9,6 +9,7 @@ namespace SampleCalculator
             OperationType operationType = GetOperationFromUser();
 
 
+
             Console.WriteLine("Podaj pierwszą liczbę:");
             string? firstNumber = Console.ReadLine();
 
@@ -29,6 +30,21 @@ namespace SampleCalculator
                 return;
             }
 
+
+            switch (operationType)
+            {
+                case OperationType.Dodawanie:
+
+                    break;
+                case OperationType.Odejmowanie:
+                    break;
+                case OperationType.Mnozenie:
+                    break;
+                case OperationType.Dzielenie:
+                    break;
+                default:
+                    break;
+            }
             int result = number1 * number2;
 
             Console.WriteLine($"Wynik mnożenia {number1} * {number2} = {result}");
@@ -49,6 +65,27 @@ namespace SampleCalculator
             Odejmowanie,
             Mnozenie,
             Dzielenie,
+        }
+
+        static double CalculateResult(int number1, int number2, OperationType operationType)
+        {
+            switch (operationType)
+            {
+                case OperationType.Dodawanie:
+                    return number1 + number2;
+                case OperationType.Odejmowanie:
+                    return number1 - number2;
+                    
+                case OperationType.Mnozenie:
+                    return number1 * number2;
+                    
+                case OperationType.Dzielenie:
+                    return number1 / number2;
+                    
+                default:
+                    return 0;
+                    
+            }
         }
     }
 }
