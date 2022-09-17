@@ -30,22 +30,7 @@ namespace SampleCalculator
                 return;
             }
 
-
-            switch (operationType)
-            {
-                case OperationType.Dodawanie:
-
-                    break;
-                case OperationType.Odejmowanie:
-                    break;
-                case OperationType.Mnozenie:
-                    break;
-                case OperationType.Dzielenie:
-                    break;
-                default:
-                    break;
-            }
-            int result = number1 * number2;
+            double result = CalculateResult(number1, number2, operationType);
 
             Console.WriteLine($"Wynik mnożenia {number1} * {number2} = {result}");
         }
