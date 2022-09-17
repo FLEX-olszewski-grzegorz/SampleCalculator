@@ -4,6 +4,10 @@
     {
         static void Main(string[] args)
         {
+
+            GetOperationFromUser();
+
+
             Console.WriteLine("Podaj pierwszą liczbę:");
             string? firstNumber = Console.ReadLine();
 
@@ -27,6 +31,11 @@
             int result = number1 * number2;
 
             Console.WriteLine($"Wynik mnożenia {number1} * {number2} = {result}");
+        }
+
+        static void GetOperationFromUser()
+        {
+
         }
     }
 }
