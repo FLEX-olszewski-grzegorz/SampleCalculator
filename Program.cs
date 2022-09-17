@@ -32,6 +32,12 @@
 }
 
 /*
+TO-DO:
+- Mateusz: użytkownik wybiera rodzaj działania z puli: 1. dodawanie, 2. odejmowanie, 3. mnożenie, 4. dzielenie
+- Filip: refaktoryzacja, zasada DRY: opakowanie pobrania liczby od użytkownika w metodę
+
+
+ZREALIZOWANE
 Kalkulator wykonujący jedno działanie:
 - Filip: dodawanie
 - Mateusz: odejmowanie
